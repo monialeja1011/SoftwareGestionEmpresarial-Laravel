@@ -4,16 +4,16 @@
 
 ### 1. Landing Page
 
-![Landing Page](clase%204/evidencias/Captura1.png)
+![Landing Page](clase4/evidencias/Captura1.png)
 
 ### 2. Login personalizado
 
-![Login](clase%204/evidencias/Captura2.png)
+![Login](clase4/evidencias/Captura2.png)
 
 ### 3. Registro personalizado
 
-![Registro](clase%204/evidencias/Captura3.png)
+![Registro](clase4/evidencias/Captura3.png)
 
 ### 4. Creación de producto
 
-![Producto](clase%204/evidencias/Captura4.png)
+![Producto](clase4/evidencias/Captura4.png)
