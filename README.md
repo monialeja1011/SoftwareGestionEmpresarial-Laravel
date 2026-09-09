@@ -1,1 +1,3 @@
-\\wsl.localhost\Ubuntu\home\monicaparra\proyectos\sge\clase 4\evidencias\Captura de pantalla 2026-09-09 113415.png \\wsl.localhost\Ubuntu\home\monicaparra\proyectos\sge\clase 4\evidencias\Captura de pantalla 2026-09-09 113449.png \\wsl.localhost\Ubuntu\home\monicaparra\proyectos\sge\clase 4\evidencias\Captura de pantalla 2026-09-09 113518.png \\wsl.localhost\Ubuntu\home\monicaparra\proyectos\sge\clase 4\evidencias\Captura de pantalla 2026-09-09 113538.png![alt text](<Captura de pantalla 2026-09-09 113415.png>) ![alt text](<Captura de pantalla 2026-09-09 113449.png>) ![alt text](<Captura de pantalla 2026-09-09 113518.png>) ![alt text](<Captura de pantalla 2026-09-09 113538.png>)
+##Carpeta Clase 4 
+
+#Todas las evidencias adjuntas :d
