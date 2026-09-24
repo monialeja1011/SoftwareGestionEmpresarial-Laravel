@@ -3,11 +3,11 @@
     <x-slot name="header">
         <div>
             <h2 class="text-xl font-semibold text-gray-800">
-                Nuevo producto
+                Editar producto
             </h2>
 
             <p class="text-sm text-gray-500">
-                Registrar un nuevo producto
+                Actualizar información del producto
             </p>
         </div>
     </x-slot>
@@ -18,8 +18,9 @@
 
             <div class="bg-white border border-gray-200 rounded-xl p-6">
 
-                <form method="POST" action="{{ route('products.store') }}">
+                <form method="POST" action="{{ route('products.update', $product) }}">
                     @csrf
+                    @method('PUT')
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
@@ -30,7 +31,7 @@
 
                             <input type="text"
                                    name="name"
-                                   value="{{ old('name') }}"
+                                   value="{{ old('name', $product->name) }}"
                                    required
                                    class="mt-1 block w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                         </div>
@@ -42,7 +43,7 @@
 
                             <input type="text"
                                    name="code"
-                                   value="{{ old('code') }}"
+                                   value="{{ old('code', $product->code) }}"
                                    required
                                    class="mt-1 block w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                         </div>
@@ -56,13 +57,9 @@
                                     required
                                     class="mt-1 block w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
 
-                                <option value="">
-                                    Seleccione una categoría
-                                </option>
-
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}"
-                                        {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                        {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
                                         {{ $category->name }}
                                     </option>
                                 @endforeach
@@ -77,7 +74,7 @@
 
                             <input type="number"
                                    name="price"
-                                   value="{{ old('price') }}"
+                                   value="{{ old('price', $product->price) }}"
                                    step="0.01"
                                    min="0"
                                    required
@@ -91,7 +88,7 @@
 
                             <input type="number"
                                    name="stock"
-                                   value="{{ old('stock') }}"
+                                   value="{{ old('stock', $product->stock) }}"
                                    min="0"
                                    required
                                    class="mt-1 block w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
@@ -105,7 +102,7 @@
 
                             <textarea name="description"
                                       rows="4"
-                                      class="mt-1 block w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">{{ old('description') }}</textarea>
+                                      class="mt-1 block w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">{{ old('description', $product->description) }}</textarea>
 
                         </div>
 
@@ -120,7 +117,7 @@
 
                         <button type="submit"
                                 class="px-5 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">
-                            Guardar producto
+                            Actualizar producto
                         </button>
 
                     </div>

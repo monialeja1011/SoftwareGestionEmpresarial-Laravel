@@ -1,0 +1,56 @@
+erDiagram
+
+    CATEGORIES ||--o{ PRODUCTS : contiene
+    CLIENTS ||--o{ SALES : realiza
+    SALES ||--o{ SALE_DETAILS : contiene
+    PRODUCTS ||--o{ SALE_DETAILS : incluye
+
+    CATEGORIES {
+        bigint id PK
+        varchar name
+        text description
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    CLIENTS {
+        bigint id PK
+        varchar name
+        varchar phone
+        varchar email
+        varchar address
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    PRODUCTS {
+        bigint id PK
+        bigint category_id FK
+        varchar name
+        varchar code
+        decimal price
+        integer stock
+        text description
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    SALES {
+        bigint id PK
+        bigint client_id FK
+        date date
+        decimal total
+        varchar status
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    SALE_DETAILS {
+        bigint id PK
+        bigint sale_id FK
+        bigint product_id FK
+        integer quantity
+        decimal unit_price
+        timestamp created_at
+        timestamp updated_at
+    }
