@@ -356,7 +356,5 @@ Las evidencias de la interfaz se encuentran en la carpeta `docs/visual/`. Entre 
 - Panel de control y navegación.
 - Creación y gestión de productos.
 
-## 22. Estado del proyecto
 
-El sistema cuenta con autenticación funcional, interfaz personalizada con Tailwind CSS, base de datos relacional con Eloquent, operaciones CRUD completas en productos mediante controladores Resource, optimización de consultas con Eager Loading y Scopes personalizados, además de una documentación técnica completa.
 
