@@ -1,16 +1,13 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <div class="flex items-center justify-between">
-            <div>
-                <h2 class="text-2xl font-bold text-gray-800">
-                    Panel de control
-                </h2>
-
-                <p class="mt-1 text-sm text-gray-500">
-                    Sistema de Gestión Empresarial
-                </p>
-            </div>
+        <div>
+            <h2 class="text-2xl font-bold text-gray-800">
+                Panel de control
+            </h2>
+            <p class="mt-1 text-sm text-gray-500">
+                Sistema de Gestión Empresarial
+            </p>
         </div>
     </x-slot>
 
@@ -31,7 +28,11 @@
             <!-- Tarjetas -->
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                <!-- Usuarios -->
+                <a href="{{ route('profile.edit') }}"
+                   class="bg-white rounded-xl border border-gray-200 shadow-sm p-6
+                          hover:border-blue-400 hover:shadow-md transition">
+
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm text-gray-500">
@@ -39,7 +40,7 @@
                             </p>
 
                             <p class="mt-2 text-3xl font-bold text-gray-800">
-                                1
+                                {{ $usuarios }}
                             </p>
                         </div>
 
@@ -49,9 +50,13 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                <!-- Clientes -->
+                <a href="{{ route('clients.index') }}"
+                   class="bg-white rounded-xl border border-gray-200 shadow-sm p-6
+                          hover:border-green-400 hover:shadow-md transition">
+
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm text-gray-500">
@@ -59,7 +64,7 @@
                             </p>
 
                             <p class="mt-2 text-3xl font-bold text-gray-800">
-                                0
+                                {{ $clientes }}
                             </p>
                         </div>
 
@@ -69,9 +74,13 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                <!-- Productos -->
+                <a href="{{ route('products.index') }}"
+                   class="bg-white rounded-xl border border-gray-200 shadow-sm p-6
+                          hover:border-purple-400 hover:shadow-md transition">
+
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm text-gray-500">
@@ -79,7 +88,7 @@
                             </p>
 
                             <p class="mt-2 text-3xl font-bold text-gray-800">
-                                0
+                                {{ $productos }}
                             </p>
                         </div>
 
@@ -89,9 +98,13 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                <!-- Ventas -->
+                <a href="{{ route('sales.index') }}"
+                   class="bg-white rounded-xl border border-gray-200 shadow-sm p-6
+                          hover:border-orange-400 hover:shadow-md transition">
+
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm text-gray-500">
@@ -99,7 +112,7 @@
                             </p>
 
                             <p class="mt-2 text-3xl font-bold text-gray-800">
-                                0
+                                {{ $ventas }}
                             </p>
                         </div>
 
@@ -109,7 +122,7 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </a>
 
             </div>
 
@@ -128,7 +141,11 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
 
-                    <div class="p-5 rounded-lg border border-gray-200 hover:border-blue-400 transition">
+                    <!-- Usuarios -->
+                    <a href="{{ route('profile.edit') }}"
+                       class="p-5 rounded-lg border border-gray-200
+                              hover:border-blue-400 hover:shadow-sm transition">
+
                         <h4 class="font-semibold text-gray-800">
                             Usuarios
                         </h4>
@@ -136,9 +153,13 @@
                         <p class="mt-1 text-sm text-gray-500">
                             Administración de usuarios.
                         </p>
-                    </div>
+                    </a>
 
-                    <div class="p-5 rounded-lg border border-gray-200 hover:border-blue-400 transition">
+                    <!-- Clientes -->
+                    <a href="{{ route('clients.index') }}"
+                       class="p-5 rounded-lg border border-gray-200
+                              hover:border-green-400 hover:shadow-sm transition">
+
                         <h4 class="font-semibold text-gray-800">
                             Clientes
                         </h4>
@@ -146,9 +167,17 @@
                         <p class="mt-1 text-sm text-gray-500">
                             Gestión de clientes.
                         </p>
-                    </div>
 
-                    <div class="p-5 rounded-lg border border-gray-200 hover:border-blue-400 transition">
+                        <span class="inline-block mt-3 text-sm text-green-600">
+                            Ver clientes →
+                        </span>
+                    </a>
+
+                    <!-- Productos -->
+                    <a href="{{ route('products.index') }}"
+                       class="p-5 rounded-lg border border-gray-200
+                              hover:border-purple-400 hover:shadow-sm transition">
+
                         <h4 class="font-semibold text-gray-800">
                             Productos
                         </h4>
@@ -156,9 +185,17 @@
                         <p class="mt-1 text-sm text-gray-500">
                             Control de productos.
                         </p>
-                    </div>
 
-                    <div class="p-5 rounded-lg border border-gray-200 hover:border-blue-400 transition">
+                        <span class="inline-block mt-3 text-sm text-purple-600">
+                            Ver productos →
+                        </span>
+                    </a>
+
+                    <!-- Ventas -->
+                    <a href="{{ route('sales.index') }}"
+                       class="p-5 rounded-lg border border-gray-200
+                              hover:border-orange-400 hover:shadow-sm transition">
+
                         <h4 class="font-semibold text-gray-800">
                             Ventas
                         </h4>
@@ -166,10 +203,13 @@
                         <p class="mt-1 text-sm text-gray-500">
                             Registro y seguimiento de ventas.
                         </p>
-                    </div>
+
+                        <span class="inline-block mt-3 text-sm text-orange-600">
+                            Ver ventas →
+                        </span>
+                    </a>
 
                 </div>
-
             </div>
 
         </div>
