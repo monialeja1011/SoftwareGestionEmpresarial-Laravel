@@ -1,24 +1,14 @@
-erDiagram
 
-    CATEGORIES ||--o{ PRODUCTS : contiene
+erDiagram
+    CATEGORIES ||--o{ PRODUCTS : tiene
     CLIENTS ||--o{ SALES : realiza
-    SALES ||--o{ SALE_DETAILS : contiene
+    SALES ||--|{ SALE_DETAILS : contiene
     PRODUCTS ||--o{ SALE_DETAILS : incluye
 
     CATEGORIES {
         bigint id PK
         varchar name
         text description
-        timestamp created_at
-        timestamp updated_at
-    }
-
-    CLIENTS {
-        bigint id PK
-        varchar name
-        varchar phone
-        varchar email
-        varchar address
         timestamp created_at
         timestamp updated_at
     }
@@ -31,6 +21,16 @@ erDiagram
         decimal price
         integer stock
         text description
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    CLIENTS {
+        bigint id PK
+        varchar name
+        varchar phone
+        varchar email
+        varchar address
         timestamp created_at
         timestamp updated_at
     }
@@ -51,6 +51,4 @@ erDiagram
         bigint product_id FK
         integer quantity
         decimal unit_price
-        timestamp created_at
-        timestamp updated_at
     }
